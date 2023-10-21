@@ -1,0 +1,70 @@
+Enterprise architecture (EA) is a description of an enterprise from an integrated busi-
+ness and IT perspective. Enterprise architecture management (EAM) is a management
+practice embracing all the management processes related to EA aiming to improve busi-
+ness and IT alignment. EAM is typically described as a sequential four-step process:
+(i) document the current state, (ii) describe the desired future state, (iii) develop the
+transition plan and (iv) implement the plan. This traditional four-step approach to EAM
+essentially defines the modern understanding of EA. Based on a literature review, this
+paper demonstrates that this four-step approach to EAM, though practiced by some
+companies, is inadequate as a model explaining the EAM phenomenon in general. As
+a substitute, this paper synthesizes the generic conceptual model of EAM providing
+a more realistic conceptualization of EAM describing it as a decentralized network of
+independent but interacting processes, artifacts and actors.
+
+Introduction
+The role of IT for modern enterprises is significant. Companies spend considerable
+amounts of money investing in IT. However, in order to realize the full potential
+value of IT investments, the IT strategy of a company should be aligned with its
+business strategy.1–3 Enterprise architecture (EA) is a description of an enterprise
+from an integrated business and IT perspective recognized as an instrument for
+facilitating business and IT alignment. Enterprise architecture management (EAM)
+is a management practice embracing all the management processes related to EA
+aiming to achieve business and IT alignment.4,5
+Spewak and Hill6 presented the first comprehensive approach to EAM. They
+describe EAM as a sequential step-wise project with essentially the following steps:
+(i) document the current state of the whole enterprise in detail, (ii) describe the
+desired future state of the whole enterprise in detail, (iii) develop the transition
+plan describing how to migrate from the current state to the future state and
+(iv) implement the plan. This traditional four-step approach to EAM was later supported by other authors7–10 who proposed its different variations. This approach
+to EAM dominates and essentially defines the current EA literature since many
+authors11–14 use it as a reference model of EAM in their research. Moreover, the tra-
+ditional approach to EAM10 is considered as a de facto standard in EA practice.15–17
+Therefore, the traditional four-step approach to EAM6 virtually became a standard
+way to conceptualize and understand EAM in the mainstream EA literature.
+However, following recommendations of the traditional approach to EAM often
+leads to significant practical problems.18 Holst and Steensen19 even argue that a
+successful EAM can hardly be established based on the mainstream EA literature.
+The surveys20,21 show that only 45.1% of companies document both current and
+future states and only 58% of companies produce roadmaps as advocated by the
+traditional approach to EAM. The case studies of successful companies practicing
+EA22,23 demonstrate that working EAM differs from the descriptions provided by
+the popular EA literature.7,10 Moreover, many companies are too large to be com-
+prehensively described and planned in a centralized manner as recommended by the
+traditional approach to EAM.23 EAM should also be able to struggle with the envi-
+ronmental instability,24–26 react on emergent needs27,28 and should be embedded
+into normal organizational processes to be successful,18 however, the rigid tradi-
+tional four-step approach to EAM hardly explains how it can be done.
+Therefore, the traditional four-step approach to EAM, though widely supported
+by the EA literature and practiced by some companies, is inadequate as a generic
+conceptual model explaining the EAM phenomenon in general. However, no other
+alternative models describing EAM have been presented in the EA literature. At the
+same time, the lack of a commonly accepted conceptual model of EAM precludes
+the EA research from deeper studies of this phenomenon. For instance, even EA
+publications in the leading academic outlets analyze EAM only as a black box which
+adds value to organizations,29 has some maturity30 and success factors,31 depends
+on strategy32 and can be institutionalized,33 while the basic question on what EAM
+is has no definite answers but is not discussed. Unsurprisingly, the inability of EA
+theory to provide adequate answers to the basic questions leads to problems in EA
+practice18,19 and results in poor success rates of EA initiatives.34–37
+The inadequacy of the traditional four-step model of EAM as a generic con-
+ceptual model and the lack of any alternative models serve as a motivation for
+this paper. This paper, based on an extensive literature review, synthesizes the
+generic conceptual model of EAM describing its essential elements. The resulting
+model describes EAM as a decentralized network of independent but interacting
+processes, artifacts and actors.
+This paper continues as follows: (i) discusses the traditional approach to EAM,
+its role in the EA literature and its problems, (ii) describes the review methodology,
+(iii) discusses the review results, (iv) synthesizes the generic conceptual model of
+EAM, (v) discusses the resulting model from different perspectives, (vi) describes
+the contribution of the new model to the EA discipline and (vii) discusses the
+limitations and directions for future research.
