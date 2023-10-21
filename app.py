@@ -1,21 +1,25 @@
-import os, streamlit as st
+import os
+import streamlit as st
 
 from llama_index import GPTVectorStoreIndex, SimpleDirectoryReader, LLMPredictor, PromptHelper, ServiceContext
 from langchain.llms.openai import OpenAI
 
+
+# Page title
 app_title = "LlamaIndex Knowledge Base"
 st.set_page_config(page_title=app_title, page_icon="🔎")
 
-# Input params
+# API-Key input
 openai_api_key = st.sidebar.text_input(
-    label="Geheimer OpenAI API-Schlüssel:",
-    placeholder="API-Schlüssel einfügen, sk-...",
+    label="Geheimer OpenAI API-Key:",
+    placeholder="API-Key einfügen, sk-...",
     type="password")
 
+# Data directory
 directory_path = "./data"
 
-files = os.listdir("./data")
-
+# Data sidebar display
+files = os.listdir(directory_path)
 st.sidebar.write(f"Geladene Dateien: {len(files)}")
 st.sidebar.table(files)
 
@@ -24,7 +28,7 @@ def get_response(query, directory_path, openai_api_key):
     llm_predictor = LLMPredictor(
         llm=OpenAI(openai_api_key=openai_api_key, temperature=0, model_name="text-davinci-003"))
 
-    # Configuring prompt parameters and initialising helper
+    # Prompt parameters and helper
     max_input_size = 4096
     num_output = 300
     max_chunk_overlap = 20
@@ -33,7 +37,7 @@ def get_response(query, directory_path, openai_api_key):
     prompt_helper = PromptHelper(max_input_size, num_output, chunk_overlap_ratio, max_chunk_overlap)
 
     if os.path.isdir(directory_path):
-        # Loading documents from the data directory
+        # Loading in documents from the data directory
         documents = SimpleDirectoryReader(directory_path).load_data()
         service_context = ServiceContext.from_defaults(llm_predictor=llm_predictor, prompt_helper=prompt_helper)
         index = GPTVectorStoreIndex.from_documents(documents, service_context=service_context)
@@ -47,16 +51,19 @@ def get_response(query, directory_path, openai_api_key):
     else:
         st.error(f"Ungültiges Verzeichnis: {directory_path}")
 
-# Streamlit App
+
+# Prompt interface
 st.title(app_title)
-st.text("Durchsuche die geladenen Dateien mit Hilfe von LlamaIndex und OpenAI.")
+st.text("Durchsuche die geladenen Dateien mit Hilfe von LlamaIndex und InstructGPT.")
 
 query = st.text_input("", "", placeholder="🔎 Was möchtest du wissen?")
 
-query = f"Beantworte die folgende Frage in weniger als 3 Sätzen oder 256 Zeichen. Verwende für die Beantwortung der" \
+# Adding further prompting instructions to query
+query = f"Beantworte die folgende Frage in weniger als 3 Sätzen oder maximal 200 Zeichen. Verwende für die Beantwortung der" \
         f"Frage den gegebenen Kontext. Das ist die Frage: {query}"
 
-# If the 'Submit' button is clicked
+
+# Submit button and main function execution
 if st.button("Absenden", type="primary"):
     if not query.strip():
         st.error(f"Bitte geben Sie die Suchanfrage ein.")
@@ -64,8 +71,8 @@ if st.button("Absenden", type="primary"):
         try:
             if len(openai_api_key) > 0:
                 with st.spinner('Überlege...'):
-                    get_response(query,directory_path,openai_api_key)
+                    get_response(query, directory_path, openai_api_key)
             else:
-                st.error(f"Geben Sie einen gültigen OpenAI-Key ein")
+                st.error(f"Geben Sie einen gültigen API-Key ein")
         except Exception as e:
             st.error(f"Fehler: {e}")
