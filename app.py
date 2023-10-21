@@ -59,8 +59,8 @@ st.text("Durchsuche die geladenen Dateien mit Hilfe von LlamaIndex und InstructG
 query = st.text_input("", "", placeholder="🔎 Was möchtest du wissen?")
 
 # Adding further prompting instructions to query
-query = f"Beantworte die folgende Frage in weniger als 3 Sätzen oder maximal 200 Zeichen. Verwende für die Beantwortung der" \
-        f"Frage den gegebenen Kontext. Das ist die Frage: {query}"
+query = f"Beantworte die folgende Frage in weniger als 3 Sätzen oder maximal 200 Zeichen. Verwende für die " \
+        f"Beantwortung der Frage den gegebenen Kontext. Das ist die Frage: {query}"
 
 
 # Submit button and main function execution
